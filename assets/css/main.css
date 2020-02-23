@@ -3173,14 +3173,6 @@ input, select, textarea {
 						content: '\f0c9';
 						line-height: inherit;
 						padding-left: 1em;
-						-moz-transition: opacity 1s ease, -moz-transform 1s ease, -moz-filter 0.25s ease;
-						-webkit-transition: opacity 1s ease, -webkit-transform 1s ease, -webkit-filter 0.25s ease;
-						-ms-transition: opacity 1s ease, -ms-transform 1s ease, -ms-filter 0.25s ease;
-						transition: opacity 1s ease, transform 1s ease, filter 0.25s ease;
-						-moz-transition-delay: 1.5s;
-						-webkit-transition-delay: 1.5s;
-						-ms-transition-delay: 1.5s;
-						transition-delay: 0s;
 					}
 
 					#header nav a[href="#menu"]:hover {
