@@ -101,12 +101,9 @@ input, select, textarea {
 	body {
 		background-color: #2e3141;
 		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.7)), url("../../images/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg");
-		background-size: auto,
- cover;
-		background-attachment: fixed,
- fixed;
-		background-position: center,
- center;
+		background-size: auto, cover;
+		background-attachment: fixed, fixed;
+		background-position: center, center;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -177,7 +174,7 @@ input, select, textarea {
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
 		color: #ffffff;
-		text-decoration: none;
+		text-decoration: none;	
 	}
 
 		a:hover {
@@ -3119,7 +3116,7 @@ input, select, textarea {
 			#header nav a {
 				border: 0;
 				display: inline-block;
-				padding: 0 1em;
+				padding-right: 0.1em;
 			}
 
 				#header nav a:before {
@@ -3163,6 +3160,53 @@ input, select, textarea {
 					#header nav a[href="#menu"]:active {
 						background-color: rgba(255, 255, 255, 0.075);
 					}
+
+					
+			#header nav {
+				-moz-transition: opacity 1s ease, -moz-transform 1s ease, -moz-filter 0.25s ease;
+				-webkit-transition: opacity 1s ease, -webkit-transform 1s ease, -webkit-filter 0.25s ease;
+				-ms-transition: opacity 1s ease, -ms-transform 1s ease, -ms-filter 0.25s ease;
+				transition: opacity 1s ease, transform 1s ease, filter 0.25s ease;
+				-moz-transition-delay: 0.8s;
+				-webkit-transition-delay: 0.8s;
+				-ms-transition-delay: 0.8s;
+				transition-delay: 1.5s;
+				-moz-filter: blur(0);
+				-webkit-filter: blur(0);
+				-ms-filter: blur(0);
+				filter: blur(0);
+				opacity: 1;
+				font-family: Raleway, Helvetica, sans-serif;
+				font-weight: 200;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+			}
+
+			#header .icons {
+				font-size: 1em;
+			}
+		
+		body.is-preload #header nav {
+			opacity: 0;
+			-moz-transform: translateY(-0.5em);
+			-webkit-transform: translateY(-0.5em);
+			-ms-transform: translateY(-0.5em);
+			transform: translateY(-0.5em);
+			-moz-filter: blur(2px);
+			-webkit-filter: blur(2px);
+			-ms-filter: blur(2px);
+			filter: blur(2px);
+		}
+
+		#header ul, #header li {
+			list-style-type: none;
+			display: inline-block;
+		}
+		
+		#header .icons li {
+			font-size: 1.5em;
+			padding-left: .25em;
+		}
 
 		#header.alt {
 			background-color: transparent;
@@ -3383,7 +3427,7 @@ input, select, textarea {
 
 		#banner .inner {
 			margin: 0 auto;
-			width: 55em;
+			width: 60em;
 		}
 
 		#banner .logo {
@@ -3411,10 +3455,10 @@ input, select, textarea {
 				width: 2.25em;
 			}
 
-			#banner .subtitle .icons {
-				font-size: 1em;
-				display: inline-block;
-			}
+		#banner ul {
+			list-style-type: none;
+			overflow: hidden;
+		}
 
 		#banner h2 {
 			-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
@@ -3434,17 +3478,17 @@ input, select, textarea {
 			-ms-filter: blur(0);
 			filter: blur(0);
 			opacity: 1;
-			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+			border-bottom: solid 3px rgba(255, 255, 255, 0.125);
 			font-size: 2.25em;
 			margin-bottom: 0.8em;
 			padding-bottom: 0.4em;
 		}
 
-		#banner p {
-			-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
-			-webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
-			-ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
-			transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+		#banner p, a {
+			-moz-transition: opacity 0.8s ease, -moz-transform 0.8s ease, -moz-filter 0.25s ease;
+			-webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease, -webkit-filter 0.25s ease;
+			-ms-transition: opacity 0.8s ease, -ms-transform 0.8s ease, -ms-filter 0.25s ease;
+			transition: opacity 0.8s ease, transform 0.8s ease, filter 0.25s ease;
 			-moz-transform: translateX(0);
 			-webkit-transform: translateX(0);
 			-ms-transform: translateX(0);
@@ -3462,8 +3506,13 @@ input, select, textarea {
 			font-size: 1em;
 			font-weight: 200;
 			letter-spacing: 0.1em;
-			line-height: 2;
 			text-transform: uppercase;
+		}
+
+		#banner a {
+			font-size: 1.5em;
+			line-height: normal;
+			padding-left: .25em;
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -3471,11 +3520,9 @@ input, select, textarea {
 			#banner {
 				padding: 7em 0 8.25em 0 ;
 				background-color: #2e3141;
-				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
-				background-size: auto,
- cover;
-				background-position: center,
- center;
+				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg");
+				background-size: auto, cover;
+				background-position: center, center;
 				margin-bottom: -6.5em;
 			}
 
@@ -3508,15 +3555,15 @@ input, select, textarea {
 					#banner .logo .icon {
 						font-size: 1.5em;
 					}
-
+				
 				#banner h2 {
 					font-size: 1.5em;
 				}
 
 				#banner p {
-					font-size: 0.8em;
+					font-size: 1em;
+					display: block;
 				}
-
 		}
 
 		body.is-preload #banner .logo {
