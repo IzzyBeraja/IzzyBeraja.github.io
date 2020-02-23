@@ -3100,31 +3100,51 @@ input, select, textarea {
 				border: 0;
 			}
 
+		
+		#header .icons a {
+			font-size: 1.5em;
+		}
+
 		#header nav {
 			font-family: Raleway, Helvetica, sans-serif;
-			font-size: 0.8em;
+			font-size: 1em;
 			font-weight: 700;
-			height: 3em;
 			letter-spacing: 0.1em;
-			line-height: 3em;
 			position: absolute;
 			right: 0.7em;
 			text-transform: uppercase;
-			top: 0.7em;
+			top: 0em;
+			-moz-transition: opacity 1s ease, -moz-transform 1s ease, -moz-filter 0.25s ease;
+			-webkit-transition: opacity 1s ease, -webkit-transform 1s ease, -webkit-filter 0.25s ease;
+			-ms-transition: opacity 1s ease, -ms-transform 1s ease, -ms-filter 0.25s ease;
+			transition: opacity 1s ease, transform 1s ease, filter 0.25s ease;
+			-moz-transition-delay: 1.5s;
+			-webkit-transition-delay: 1.5s;
+			-ms-transition-delay: 1.5s;
+			transition-delay: 1.5s;
+			-moz-filter: blur(0);
+			-webkit-filter: blur(0);
+			-ms-filter: blur(0);
+			filter: blur(0);
+			opacity: 1;
+			font-family: Raleway, Helvetica, sans-serif;
+			font-weight: 200;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
 		}
 
 			#header nav a {
 				border: 0;
 				display: inline-block;
-				padding-right: 0.1em;
+				vertical-align: middle;
 			}
 
 				#header nav a:before {
 					float: right;
-					margin-left: 0.75em;
 				}
 
 				#header nav a[href="#menu"] {
+					font-size: 0.75em;
 					text-decoration: none;
 					-moz-transition: background-color 0.2s ease-in-out;
 					-webkit-transition: background-color 0.2s ease-in-out;
@@ -3132,7 +3152,8 @@ input, select, textarea {
 					transition: background-color 0.2s ease-in-out;
 					border-radius: 5px;
 					box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
-					padding: 0 1.35em;
+					padding: 0em 1.35em;
+					line-height: 3em;
 				}
 
 					#header nav a[href="#menu"]:before {
@@ -3142,15 +3163,24 @@ input, select, textarea {
 						font-style: normal;
 						font-variant: normal;
 						text-rendering: auto;
-						line-height: 1;
 						text-transform: none !important;
 						font-family: 'Font Awesome 5 Free';
 						font-weight: 900;
+						
 					}
 
 					#header nav a[href="#menu"]:before {
 						content: '\f0c9';
 						line-height: inherit;
+						padding-left: 1em;
+						-moz-transition: opacity 1s ease, -moz-transform 1s ease, -moz-filter 0.25s ease;
+						-webkit-transition: opacity 1s ease, -webkit-transform 1s ease, -webkit-filter 0.25s ease;
+						-ms-transition: opacity 1s ease, -ms-transform 1s ease, -ms-filter 0.25s ease;
+						transition: opacity 1s ease, transform 1s ease, filter 0.25s ease;
+						-moz-transition-delay: 1.5s;
+						-webkit-transition-delay: 1.5s;
+						-ms-transition-delay: 1.5s;
+						transition-delay: 0s;
 					}
 
 					#header nav a[href="#menu"]:hover {
@@ -3160,31 +3190,12 @@ input, select, textarea {
 					#header nav a[href="#menu"]:active {
 						background-color: rgba(255, 255, 255, 0.075);
 					}
-
-					
-			#header nav {
-				-moz-transition: opacity 1s ease, -moz-transform 1s ease, -moz-filter 0.25s ease;
-				-webkit-transition: opacity 1s ease, -webkit-transform 1s ease, -webkit-filter 0.25s ease;
-				-ms-transition: opacity 1s ease, -ms-transform 1s ease, -ms-filter 0.25s ease;
-				transition: opacity 1s ease, transform 1s ease, filter 0.25s ease;
-				-moz-transition-delay: 0.8s;
-				-webkit-transition-delay: 0.8s;
-				-ms-transition-delay: 0.8s;
-				transition-delay: 1.5s;
-				-moz-filter: blur(0);
-				-webkit-filter: blur(0);
-				-ms-filter: blur(0);
-				filter: blur(0);
-				opacity: 1;
-				font-family: Raleway, Helvetica, sans-serif;
-				font-weight: 200;
-				letter-spacing: 0.1em;
-				text-transform: uppercase;
-			}
-
-			#header .icons {
-				font-size: 1em;
-			}
+	
+		#header ul, #header li {
+			list-style-type: none;
+			display: inline-block;
+			color: #ffffff;
+		}
 		
 		body.is-preload #header nav {
 			opacity: 0;
@@ -3198,15 +3209,6 @@ input, select, textarea {
 			filter: blur(2px);
 		}
 
-		#header ul, #header li {
-			list-style-type: none;
-			display: inline-block;
-		}
-		
-		#header .icons li {
-			font-size: 1.5em;
-			padding-left: .25em;
-		}
 
 		#header.alt {
 			background-color: transparent;
@@ -3325,7 +3327,6 @@ input, select, textarea {
 			-ms-transition: opacity 0.35s ease, -ms-transform 0.35s ease;
 			transition: opacity 0.35s ease, transform 0.35s ease;
 			-webkit-overflow-scrolling: touch;
-			background: #4c5c96;
 			border-radius: 5px;
 			display: block;
 			max-width: 100%;
@@ -3484,7 +3485,7 @@ input, select, textarea {
 			padding-bottom: 0.4em;
 		}
 
-		#banner p, a {
+		#banner p {
 			-moz-transition: opacity 0.8s ease, -moz-transform 0.8s ease, -moz-filter 0.25s ease;
 			-webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease, -webkit-filter 0.25s ease;
 			-ms-transition: opacity 0.8s ease, -ms-transform 0.8s ease, -ms-filter 0.25s ease;
@@ -3507,12 +3508,6 @@ input, select, textarea {
 			font-weight: 200;
 			letter-spacing: 0.1em;
 			text-transform: uppercase;
-		}
-
-		#banner a {
-			font-size: 1.5em;
-			line-height: normal;
-			padding-left: .25em;
 		}
 
 		@media screen and (max-width: 1280px) {
