@@ -1,31 +1,40 @@
-Solid State by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Welcome to the README of my personal site!
+I will be adding information about various versions and future changes I will be making here.
+This is a work in-progress so things will be constantly changing!
 
+Version 2
+    TODO:
+        -   Make things brighter and stand out more
+            +   Reduce the mutedness of the previous version
+        -   Highlight the following skills or work experiences:
+            +   Work projects (SQL, C#, JS)
+            +   Programming challenges (C#)
+                -   Project Euler links in Github
+            +   Financial knowledge (Financial projects, handling of documents and building tables)
+            +   Medical knowledge (Information about MIPS, HIPAA, MACRA, AHCA, ICD-10, CPTs)
+            +   Programming languages I'm learning (Python)
+                -   Include interest in Git, DevOps, AI
+            +   Implementations of software in company (ChaseData, VOIP, Automated reporting)
+            +   Management of staff and information (Orchestrating sale)
+        -   Less emphasis on personal information (cooking, 3d printing)
+            +   Can still be there but should be more of a background thing (Maybe just at the bottom)
+        -   Use more professional photos
+            +   Especially personal photos that show big smiles
+        -   Describe future endeavors and projects
 
-After a somewhat extended break from HTML5 UP (to work on a secret-ish new project --
-more on that later!) I'm back with a brand new design: Solid State, a slick new multi-
-pager that combines some of the ideas I've played with over at Pixelarity with an "angular"
-sort of look. Hope you dig it :)
-
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Version 1
+    TODO:
+        -   Change fonts to better highlight myself
+    Done:
+        -   Added the basic template for the website
+        -   Added a few items that describe me
+        -   Created some animations for the initial loading
+        -   Gained a greater understanding of CSS and HTML
+        -   Understood commiting and pushing to GIT with terminal commands
+        -   Learned the layout of Visual Studio Code
+    Remarks:
+        -   Website is a bit muted
+        -   Does not appropriately highlight my skillsets
+        -   Includes too much information that isn't relevant
+        -   Does not translate to mobile very well
+        -   Has some bugs with navigation bars
