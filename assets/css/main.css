@@ -99,8 +99,16 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #2e3141;
 		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.7)), url("../../images/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg");
+		background-color: #2e3141;
+		background-size: auto, cover;
+		background-attachment: fixed, fixed;
+		background-position: center, center;
+	}
+
+	.Programming-Projects body {
+		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.7)), url("../../images/photo-1561883088-039e53143d73.jpg");
+		background-color: #2e3141;
 		background-size: auto, cover;
 		background-attachment: fixed, fixed;
 		background-position: center, center;
@@ -3415,7 +3423,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		padding: 13em 0 5em 0 ;
+		padding: 13em 0 12em 0 ;
 	}
 
 		#banner .inner {
