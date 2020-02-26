@@ -38,3 +38,9 @@ Version 1
         -   Includes too much information that isn't relevant
         -   Does not translate to mobile very well
         -   Has some bugs with navigation bars
+
+Credits:
+
+Original template:
+AJ
+aj@lkn.io | @ajlkn
