@@ -12,5 +12,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "node-fetch": "^2.6.1"
+  }
 }
