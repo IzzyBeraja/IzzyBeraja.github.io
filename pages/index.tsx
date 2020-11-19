@@ -1,5 +1,8 @@
-import Github from "components/github";
 import Header from "components/Header";
+import GitHub from "components/GitHub";
+import LinkedIn from "components/LinkedIn";
+import Projects from "components/Projects";
+import Footer from "components/Footer";
 import Head from "next/head";
 import styles from "styles/Home.module.css";
 
@@ -13,7 +16,10 @@ const Home = () => {
 
       <main>
         <Header />
-        <Github />
+        <GitHub />
+        <LinkedIn />
+        <Projects />
+        <Footer />
       </main>
     </div>
   );
