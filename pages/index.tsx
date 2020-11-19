@@ -1,3 +1,5 @@
+import Github from "components/github";
+import Header from "components/Header";
 import Head from "next/head";
 import styles from "styles/Home.module.css";
 
@@ -10,7 +12,8 @@ const Home = () => {
       </Head>
 
       <main>
-        <h1>Hello World</h1>
+        <Header />
+        <Github />
       </main>
     </div>
   );
