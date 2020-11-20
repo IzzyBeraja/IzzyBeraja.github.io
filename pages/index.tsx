@@ -5,8 +5,15 @@ import Projects from "components/Projects";
 import Footer from "components/Footer";
 import Head from "next/head";
 import styles from "styles/Home.module.css";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import getProfile from "services/githubProfileReader";
+import { GitHubProfile } from "components/GitHub/gitHub";
 
-const Home = () => {
+type Props = {
+  gitHubProfile: GitHubProfile;
+};
+
+const Home = ({ gitHubProfile }: Props) => {
   return (
     <div>
       <Head>
@@ -16,13 +23,23 @@ const Home = () => {
 
       <main>
         <Header />
-        <GitHub />
+        <GitHub profile={gitHubProfile} commitDisplayAmt={1} />
         <LinkedIn />
         <Projects />
         <Footer />
       </main>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async context => {
+  const gitHubProfile = await getProfile("IzzyBeraja");
+  console.log(gitHubProfile);
+  return {
+    props: {
+      gitHubProfile,
+    },
+  };
 };
 
 export default Home;
