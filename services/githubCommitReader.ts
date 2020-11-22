@@ -29,7 +29,8 @@ const getCommits = async (
       const commits: GitHubCommitPayload[] =
         gitEvent && gitEvent.payload && gitEvent.payload.commits;
       commits &&
-        commits.forEach(({ sha, message }) =>
+        // commits are output in reverse order
+        commits.reverse().forEach(({ sha, message }) =>
           commitData.push({
             id: sha,
             commitLink: commitLink + { sha },
