@@ -17,7 +17,7 @@ const GitHub = ({ profile, commitDisplayAmt, commits }: Props) => {
       <h2>GitHub</h2>
       <div className="row">
         <div className="col">
-          <Profile name={name} image={image} link={link} bio={bio} />
+          <Profile profileData={profile} />
         </div>
         <div className="col">
           {commits &&

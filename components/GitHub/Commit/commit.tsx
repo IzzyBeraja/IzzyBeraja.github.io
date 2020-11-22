@@ -4,8 +4,7 @@ type Prop = {
   commitData: GitHubCommit;
 };
 
-const Commit = ({ commitData }: Prop) => {
-  const { commitLink, message, pushedDate } = commitData;
+const Commit = ({ commitData: { commitLink, message, pushedDate } }: Prop) => {
   return (
     <ul>
       <li>

@@ -1,13 +1,11 @@
+import { GitHubProfile } from "types";
 import styles from "./profile.module.scss";
 
 type Props = {
-  name: string;
-  image: string;
-  link: string;
-  bio: string;
+  profileData: GitHubProfile;
 };
 
-const Profile = ({ name, image, link, bio }: Props) => {
+const Profile = ({ profileData: { name, image, link, bio } }: Props) => {
   return (
     <ul className={styles.profile}>
       <li>
