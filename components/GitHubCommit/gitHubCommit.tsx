@@ -5,7 +5,15 @@ type Prop = {
 };
 
 const GitHubCommit = ({ commitData }: Prop) => {
-  return <div></div>;
+  const { commitLink, message, pushedDate } = commitData;
+  return (
+    <ul>
+      <li>
+        <a href={commitLink}>{message}</a>
+      </li>
+      <li>{pushedDate}</li>
+    </ul>
+  );
 };
 
 export default GitHubCommit;

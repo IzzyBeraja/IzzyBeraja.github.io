@@ -33,7 +33,7 @@ const getCommits = async (
         commits.reverse().forEach(({ sha, message }) =>
           commitData.push({
             id: sha,
-            commitLink: commitLink + { sha },
+            commitLink: commitLink + sha,
             message,
             pushedDate: gitEvent.created_at,
           })

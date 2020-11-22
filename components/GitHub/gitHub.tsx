@@ -2,7 +2,7 @@ import GitHubCommit from "components/GitHubCommit/gitHubCommit";
 import { Commit, GitHubProfile } from "types";
 
 type Props = {
-  commitDisplayAmt: number;
+  commitDisplayAmt?: number;
   profile: GitHubProfile;
   commits: Commit[];
 };
@@ -18,7 +18,7 @@ const GitHub = ({ profile, commitDisplayAmt, commits }: Props) => {
         <p>{`Profile Name: ${name}`}</p>
         {commits &&
           commits
-            .slice(0, commitDisplayAmt)
+            .slice(0, commitDisplayAmt || commits.length)
             .map(commit => (
               <GitHubCommit key={commit.id} commitData={commit} />
             ))}

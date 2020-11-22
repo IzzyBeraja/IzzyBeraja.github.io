@@ -12,14 +12,14 @@ import getProfile from "services/githubProfileReader";
 import styles from "styles/Home.module.css";
 import getCommits from "services/githubCommitReader";
 
+const totalCommits = 4;
+
 type Props = {
   gitHubProfile: GitHubProfile;
   gitHubCommits: Commit[];
 };
 
 const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
-  console.log("Profile", { gitHubProfile });
-  console.log("Commits", { gitHubCommits });
   return (
     <div>
       <Head>
@@ -29,7 +29,11 @@ const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
 
       <main>
         <Header />
-        <GitHub profile={gitHubProfile} commitDisplayAmt={1} commits={null} />
+        <GitHub
+          profile={gitHubProfile}
+          commitDisplayAmt={totalCommits}
+          commits={gitHubCommits}
+        />
         <LinkedIn />
         <Projects />
         <Footer />
@@ -41,7 +45,7 @@ const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
 export const getStaticProps: GetStaticProps = async context => {
   const user = "IzzyBeraja";
   const gitHubProfile = await getProfile(user);
-  const gitHubCommits = await getCommits(user, 4);
+  const gitHubCommits = await getCommits(user, totalCommits);
   return {
     props: {
       gitHubProfile,
