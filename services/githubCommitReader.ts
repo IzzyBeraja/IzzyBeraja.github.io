@@ -1,11 +1,14 @@
-import { Commit } from "types";
+import { Commit, GitHubCommitPayload } from "types";
 
-const getCommits = async (username: string, resultCount: number) => {
-  const maxResults = 30;
-  const totalResults =
+const getCommits = async (
+  username: string,
+  resultCount: number
+): Promise<Commit[] | string> => {
+  const maxResults = 10; // Arbitrary number
+  const totalEvents =
     resultCount <= 0 || resultCount > maxResults ? maxResults : resultCount;
   const response = await fetch(
-    `https://api.github.com/users/${username}/events?per_page=${totalResults}`
+    `https://api.github.com/users/${username}/events?per_page=${totalEvents}`
   );
 
   if (!response)
@@ -13,14 +16,29 @@ const getCommits = async (username: string, resultCount: number) => {
   if (response.status === 404)
     return "This profile does not seem to have any commits.";
 
-  const { name, avatar_url, html_url, bio } = await response.json();
-  const profileData: Commit = {
-    commitLink: null,
-    date: null,
-    id: null,
-    message: null,
-  };
-  return profileData;
+  const results: any[] = await response.json();
+
+  const commitData: Commit[] = [];
+  results &&
+    results.forEach(gitEvent => {
+      const commitLink =
+        gitEvent &&
+        gitEvent.repo &&
+        gitEvent.repo.name &&
+        `https://www.github.com/${gitEvent.repo.name}/commit/`;
+      const commits: GitHubCommitPayload[] =
+        gitEvent && gitEvent.payload && gitEvent.payload.commits;
+      commits &&
+        commits.forEach(({ sha, message }) =>
+          commitData.push({
+            id: sha,
+            commitLink: commitLink + { sha },
+            message,
+            pushedDate: gitEvent.created_at,
+          })
+        );
+    });
+  return commitData.slice(0, totalEvents);
 };
 
 export default getCommits;

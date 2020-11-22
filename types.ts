@@ -1,8 +1,13 @@
 export type Commit = {
   id: string;
   message: string;
-  date: string;
+  pushedDate: string;
   commitLink: string;
+};
+
+export type GitHubCommitPayload = {
+  sha: string;
+  message: string;
 };
 
 export type GitHubProfile = {

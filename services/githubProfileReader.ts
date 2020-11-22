@@ -1,6 +1,8 @@
 import { GitHubProfile } from "types";
 
-const getProfile = async (username: string) => {
+const getProfile = async (
+  username: string
+): Promise<GitHubProfile | string> => {
   const response = await fetch(`https://api.github.com/users/${username}`);
 
   if (!response)
