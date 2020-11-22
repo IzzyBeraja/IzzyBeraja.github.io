@@ -1,4 +1,4 @@
-import { GitHubProfile } from "components/GitHub/gitHub";
+import { GitHubProfile } from "types";
 
 const getProfile = async (username: string) => {
   const response = await fetch(`https://api.github.com/users/${username}`);
@@ -13,8 +13,6 @@ const getProfile = async (username: string) => {
     image: avatar_url,
     bio,
     link: html_url,
-    commits: null,
-    commitLink: null,
   };
   return profileData;
 };

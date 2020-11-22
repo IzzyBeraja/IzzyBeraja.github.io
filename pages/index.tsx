@@ -4,10 +4,12 @@ import LinkedIn from "components/LinkedIn";
 import Projects from "components/Projects";
 import Footer from "components/Footer";
 import Head from "next/head";
-import styles from "styles/Home.module.css";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+
+import { GetStaticProps } from "next";
+import { GitHubProfile } from "types";
 import getProfile from "services/githubProfileReader";
-import { GitHubProfile } from "components/GitHub/gitHub";
+
+import styles from "styles/Home.module.css";
 
 type Props = {
   gitHubProfile: GitHubProfile;
@@ -23,7 +25,7 @@ const Home = ({ gitHubProfile }: Props) => {
 
       <main>
         <Header />
-        <GitHub profile={gitHubProfile} commitDisplayAmt={1} />
+        <GitHub profile={gitHubProfile} commitDisplayAmt={1} commits={null} />
         <LinkedIn />
         <Projects />
         <Footer />

@@ -1,22 +1,15 @@
-import Commit from "components/Commit";
-
-export type GitHubProfile = {
-  name: string;
-  image: string;
-  link: string;
-  bio: string;
-  commits: Commit[];
-  commitLink: string;
-};
+import GitHubCommit from "components/GitHubCommit/gitHubCommit";
+import { Commit, GitHubProfile } from "types";
 
 type Props = {
   commitDisplayAmt: number;
   profile: GitHubProfile;
+  commits: Commit[];
 };
 
-const GitHub = ({ profile, commitDisplayAmt: displayAmt }: Props) => {
+const GitHub = ({ profile, commitDisplayAmt, commits }: Props) => {
   if (!profile) return null;
-  const { name, image, link, commits, commitLink, bio } = profile;
+  const { name, image, link, bio } = profile;
   return (
     <div>
       <h2>GitHub</h2>
@@ -25,8 +18,10 @@ const GitHub = ({ profile, commitDisplayAmt: displayAmt }: Props) => {
         <p>{`Profile Name: ${name}`}</p>
         {commits &&
           commits
-            .slice(0, displayAmt)
-            .map(commit => <Commit key={commit.id} commitData={commit} />)}
+            .slice(0, commitDisplayAmt)
+            .map(commit => (
+              <GitHubCommit key={commit.id} commitData={commit} />
+            ))}
       </div>
     </div>
   );
