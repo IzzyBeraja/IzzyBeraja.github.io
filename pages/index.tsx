@@ -6,17 +6,16 @@ import Footer from "components/Footer";
 import Head from "next/head";
 
 import { GetStaticProps } from "next";
-import { Commit, GitHubProfile } from "types";
+import { GitHubCommit, GitHubProfile } from "types";
 import getProfile from "services/githubProfileReader";
 
-import styles from "styles/Home.module.css";
 import getCommits from "services/githubCommitReader";
 
 const totalCommits = 4;
 
 type Props = {
   gitHubProfile: GitHubProfile;
-  gitHubCommits: Commit[];
+  gitHubCommits: GitHubCommit[];
 };
 
 const Home = ({ gitHubProfile, gitHubCommits }: Props) => {

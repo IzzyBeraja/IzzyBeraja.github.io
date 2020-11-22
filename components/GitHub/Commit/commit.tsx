@@ -1,10 +1,10 @@
-import { Commit } from "types";
+import { GitHubCommit } from "types";
 
 type Prop = {
-  commitData: Commit;
+  commitData: GitHubCommit;
 };
 
-const GitHubCommit = ({ commitData }: Prop) => {
+const Commit = ({ commitData }: Prop) => {
   const { commitLink, message, pushedDate } = commitData;
   return (
     <ul>
@@ -16,4 +16,4 @@ const GitHubCommit = ({ commitData }: Prop) => {
   );
 };
 
-export default GitHubCommit;
+export default Commit;

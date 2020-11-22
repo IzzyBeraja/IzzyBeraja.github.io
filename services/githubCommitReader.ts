@@ -1,9 +1,9 @@
-import { Commit, GitHubCommitPayload } from "types";
+import { GitHubCommit, GitHubCommitPayload } from "types";
 
 const getCommits = async (
   username: string,
   resultCount: number
-): Promise<Commit[] | string> => {
+): Promise<GitHubCommit[] | string> => {
   const maxResults = 10; // Arbitrary number
   const totalEvents =
     resultCount <= 0 || resultCount > maxResults ? maxResults : resultCount;
@@ -18,7 +18,7 @@ const getCommits = async (
 
   const results: any[] = await response.json();
 
-  const commitData: Commit[] = [];
+  const commitData: GitHubCommit[] = [];
   results &&
     results.forEach(gitEvent => {
       const commitLink =

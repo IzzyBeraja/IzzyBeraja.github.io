@@ -1,10 +1,12 @@
-import GitHubCommit from "components/GitHubCommit/gitHubCommit";
-import { Commit, GitHubProfile } from "types";
+import Commit from "components/GitHub/Commit";
+import Profile from "components/GitHub/Profile";
+// import styles from "./gitHub.module.scss";
+import { GitHubCommit, GitHubProfile } from "types";
 
 type Props = {
   commitDisplayAmt?: number;
   profile: GitHubProfile;
-  commits: Commit[];
+  commits: GitHubCommit[];
 };
 
 const GitHub = ({ profile, commitDisplayAmt, commits }: Props) => {
@@ -13,15 +15,16 @@ const GitHub = ({ profile, commitDisplayAmt, commits }: Props) => {
   return (
     <div>
       <h2>GitHub</h2>
-      <div className="mx-4">
-        <p>{`Profile Image: ${image}`}</p>
-        <p>{`Profile Name: ${name}`}</p>
-        {commits &&
-          commits
-            .slice(0, commitDisplayAmt || commits.length)
-            .map(commit => (
-              <GitHubCommit key={commit.id} commitData={commit} />
-            ))}
+      <div className="row">
+        <div className="col">
+          <Profile name={name} image={image} link={link} bio={bio} />
+        </div>
+        <div className="col">
+          {commits &&
+            commits
+              .slice(0, commitDisplayAmt || commits.length)
+              .map(commit => <Commit key={commit.id} commitData={commit} />)}
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-export type Commit = {
+export type GitHubCommit = {
   id: string;
   message: string;
   pushedDate: string;
