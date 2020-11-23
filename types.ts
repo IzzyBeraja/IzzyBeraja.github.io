@@ -1,4 +1,4 @@
-export type GitHubCommit = {
+export type GHCommit = {
   id: string;
   message: string;
   pushedDate: string;
@@ -10,7 +10,7 @@ export type GitHubCommitPayload = {
   message: string;
 };
 
-export type GitHubProfile = {
+export type GHProfile = {
   name: string;
   image: string;
   link: string;

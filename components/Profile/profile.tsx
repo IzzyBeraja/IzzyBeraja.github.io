@@ -1,8 +1,8 @@
-import { GitHubProfile } from "types";
+import { GHProfile } from "types";
 import styles from "./profile.module.scss";
 
 type Props = {
-  profileData: GitHubProfile;
+  profileData: GHProfile;
 };
 
 const Profile = ({ profileData: { name, image, link, bio } }: Props) => {

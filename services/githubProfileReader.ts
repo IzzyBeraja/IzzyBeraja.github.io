@@ -1,8 +1,6 @@
-import { GitHubProfile } from "types";
+import { GHProfile } from "types";
 
-const getProfile = async (
-  username: string
-): Promise<GitHubProfile | string> => {
+const getProfile = async (username: string): Promise<GHProfile | string> => {
   const response = await fetch(`https://api.github.com/users/${username}`);
 
   if (!response)
@@ -10,7 +8,7 @@ const getProfile = async (
   if (response.status === 404) return "This profile could not be found.";
 
   const { name, avatar_url, html_url, bio } = await response.json();
-  const profileData: GitHubProfile = {
+  const profileData: GHProfile = {
     name,
     image: avatar_url,
     bio,

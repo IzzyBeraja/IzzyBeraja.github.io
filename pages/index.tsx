@@ -6,7 +6,7 @@ import Footer from "components/Footer";
 import Head from "next/head";
 
 import { GetStaticProps } from "next";
-import { GitHubCommit, GitHubProfile } from "types";
+import { GHCommit, GHProfile } from "types";
 import getProfile from "services/githubProfileReader";
 
 import getCommits from "services/githubCommitReader";
@@ -14,8 +14,8 @@ import getCommits from "services/githubCommitReader";
 const totalCommits = 4;
 
 type Props = {
-  gitHubProfile: GitHubProfile;
-  gitHubCommits: GitHubCommit[];
+  gitHubProfile: GHProfile;
+  gitHubCommits: GHCommit[];
 };
 
 const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
@@ -30,8 +30,8 @@ const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
         <Header />
         <GitHub
           profile={gitHubProfile}
-          commitDisplayAmt={totalCommits}
           commits={gitHubCommits}
+          commitDisplayAmt={totalCommits}
         />
         <LinkedIn />
         <Projects />
