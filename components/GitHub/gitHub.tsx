@@ -1,6 +1,6 @@
 import Profile from "components/Profile";
 import GitHubCommit from "components/GitHubCommit/gitHubCommit";
-// import styles from "./gitHub.module.scss";
+import styles from "./gitHub.module.scss";
 import { GHCommit, GHProfile } from "types";
 
 type Props = {
@@ -11,8 +11,6 @@ type Props = {
 
 const GitHub = ({ profile, commitDisplayAmt, commits }: Props) => {
   if (!profile) return null;
-  const { name, image, link, bio } = profile;
-
   return (
     <div>
       <h2>GitHub</h2>
@@ -20,13 +18,16 @@ const GitHub = ({ profile, commitDisplayAmt, commits }: Props) => {
         <div className="col">
           <Profile profileData={profile} />
         </div>
-        <div className="col">
+        <div className={`col ${styles.commitList}`}>
           {commits &&
             commits
               .slice(0, commitDisplayAmt || commits.length)
               .map(commit => (
                 <GitHubCommit key={commit.id} commitData={commit} />
               ))}
+          <div className={styles.seeMore}>
+            <a href={profile.link}>See more of my GitHub here</a>
+          </div>
         </div>
       </div>
     </div>

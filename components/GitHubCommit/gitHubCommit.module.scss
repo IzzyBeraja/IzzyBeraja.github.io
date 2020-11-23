@@ -1,12 +1,14 @@
-div .bubble {
+.bubble {
   border-radius: 1rem;
-  background-color: #f5f5f5;
+  background: #f5f5f5;
   width: 70%;
+  margin: auto;
+}
 
-  :hover {
-    background-color: #f0f0f0;
-    border-radius: 1rem;
-  }
+.bubble:hover {
+  background: #f0f0f0;
+  border-radius: 1rem;
+  width: 72%;
 }
 
 .commit {
