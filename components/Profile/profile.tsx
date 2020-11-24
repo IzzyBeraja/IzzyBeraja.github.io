@@ -18,12 +18,12 @@ const Profile = ({ profileData: { name, image, link, bio } }: Props) => {
         </a>
       </li>
       <li>
-        <a className={styles.title} href={link}>
-          {name}
+        <a className={styles.title} href={link || "www.github.com"}>
+          {name || "GitHub username"}
         </a>
       </li>
       <li className={styles.bio}>
-        <div>{bio}</div>
+        <div>{bio || "Insert bio here..."}</div>
       </li>
     </ul>
   );

@@ -10,7 +10,6 @@ type Props = {
 };
 
 const GitHub = ({ profile, commitDisplayAmt, commits }: Props) => {
-  if (!profile) return null;
   return (
     <div>
       <h2>GitHub</h2>

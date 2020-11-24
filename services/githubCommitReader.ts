@@ -1,4 +1,25 @@
-import { GHCommit, GitHubCommitPayload } from "types";
+import { GHCommit } from "types";
+
+//> This code is a bit ugly
+//> Should look to clean this but it works for now
+
+interface Event {
+  id: string;
+  repo: {
+    id: string;
+    name: string;
+    url: string;
+  };
+  payload: {
+    commits: {
+      sha: string;
+      author: { email: string; name: string };
+      message: string;
+      url: string;
+    }[];
+  };
+  created_at: string;
+}
 
 const getCommits = async (
   username: string,
@@ -11,35 +32,25 @@ const getCommits = async (
     `https://api.github.com/users/${username}/events?per_page=${totalEvents}`
   );
 
-  if (!response)
-    return "An unexpected error has occured retrieving your profile.";
-  if (response.status === 404)
-    return "This profile does not seem to have any commits.";
-
-  const results: any[] = await response.json();
-
-  const commitData: GHCommit[] = [];
-  results &&
-    results.forEach(gitEvent => {
-      const commitLink =
+  if (!response && response.status === 200) {
+    const results: Event[] = await response.json();
+    const commitData: GHCommit[] = [];
+    results &&
+      results.forEach(gitEvent => {
         gitEvent &&
-        gitEvent.repo &&
-        gitEvent.repo.name &&
-        `https://www.github.com/${gitEvent.repo.name}/commit/`;
-      const commits: GitHubCommitPayload[] =
-        gitEvent && gitEvent.payload && gitEvent.payload.commits;
-      commits &&
-        // commits are output in reverse order
-        commits.reverse().forEach(({ sha, message }) =>
-          commitData.push({
-            id: sha,
-            commitLink: commitLink + sha,
-            message,
-            pushedDate: gitEvent.created_at,
-          })
-        );
-    });
-  return commitData.slice(0, totalEvents);
+          // commits are output in reverse order
+          gitEvent.payload.commits.reverse().forEach(({ sha: id, message }) =>
+            commitData.push({
+              id,
+              commitLink: `https://www.github.com/${gitEvent.repo.name}/commit/${id}`,
+              message,
+              pushedDate: gitEvent.created_at,
+            })
+          );
+      });
+    return commitData.slice(0, totalEvents);
+  }
+  return `Server returned a ${response.status}: ${response.statusText}`;
 };
 
 export default getCommits;

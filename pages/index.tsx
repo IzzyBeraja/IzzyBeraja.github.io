@@ -11,7 +11,7 @@ import getProfile from "services/githubProfileReader";
 
 import getCommits from "services/githubCommitReader";
 
-const totalCommits = 4;
+const totalCommits = 1;
 
 type Props = {
   gitHubProfile: GHProfile;
@@ -31,7 +31,7 @@ const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
         <GitHub
           profile={gitHubProfile}
           commits={gitHubCommits}
-          commitDisplayAmt={totalCommits}
+          commitDisplayAmt={totalCommits + 3}
         />
         <LinkedIn />
         <Projects />
