@@ -32,7 +32,7 @@ const getCommits = async (
     `https://api.github.com/users/${username}/events?per_page=${totalEvents}`
   );
 
-  if (!response && response.status === 200) {
+  if (response && response.status === 200) {
     const results: Event[] = await response.json();
     const commitData: GHCommit[] = [];
     results &&
