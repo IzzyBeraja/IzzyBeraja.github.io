@@ -1,3 +1,5 @@
+import * as CSS from "csstype";
+
 export type GHCommit = {
   id: string;
   message: string;
@@ -16,3 +18,10 @@ export type GHProfile = {
   link: string;
   bio: string;
 };
+
+export interface StyleArray {
+  [key: string]: CSS.Properties;
+}
+
+//> There is a way of wording this to have type safety of new properties
+export type StyleList<T extends string = string> = Record<T, CSS.Properties>;
