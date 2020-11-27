@@ -1,25 +1,33 @@
-.profileImage {
-  border-radius: 50%;
-  padding: 1.5rem;
-  width: 60%;
-  display: block;
-  margin: auto;
-}
-
 .profile {
   text-align: center;
 }
 
+.profileImage {
+  border: 0.3rem solid #ff5c5c;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem 0.2rem #ff7d5c;
+  width: 40%;
+  display: block;
+  margin: 1rem auto;
+}
+
 .title {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  color: #fff;
   text-align: center;
   margin: auto;
   text-decoration: none;
-  display: block;
+  transition: 0.3s;
+
+  &:hover {
+    text-decoration: none;
+    color: #ff6c6c;
+  }
 }
 
 .bio {
   text-align: center;
   margin: auto;
-  width: 75%;
+  width: 60%;
+  color: #ccc;
 }
