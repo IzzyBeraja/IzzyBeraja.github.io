@@ -1,11 +1,12 @@
 .profileImage {
   border-radius: 50%;
   padding: 1.5rem;
-  width: 40%;
+  width: 60%;
+  display: block;
+  margin: auto;
 }
 
 .profile {
-  list-style-type: none;
   text-align: center;
 }
 
@@ -14,10 +15,11 @@
   text-align: center;
   margin: auto;
   text-decoration: none;
+  display: block;
 }
 
 .bio {
   text-align: center;
   margin: auto;
-  width: 50%;
+  width: 75%;
 }

@@ -1,3 +1,4 @@
+import Box from "@material-ui/core/Box";
 import { GHProfile } from "types";
 import styles from "./profile.module.scss";
 
@@ -7,25 +8,19 @@ type Props = {
 
 const Profile = ({ profileData: { name, image, link, bio } }: Props) => {
   return (
-    <ul className={styles.profile}>
-      <li>
-        <a href={link}>
-          <img
-            className={styles.profileImage}
-            src={image}
-            alt={"Profile Image"}
-          />
-        </a>
-      </li>
-      <li>
-        <a className={styles.title} href={link || "www.github.com"}>
-          {name || "GitHub username"}
-        </a>
-      </li>
-      <li className={styles.bio}>
-        <div>{bio || "Insert bio here..."}</div>
-      </li>
-    </ul>
+    <Box className={styles.profile}>
+      <a href={link}>
+        <img
+          className={styles.profileImage}
+          src={image}
+          alt={"Profile Image"}
+        />
+      </a>
+      <a className={styles.title} href={link || "www.github.com"}>
+        {name || "GitHub username"}
+      </a>
+      <div className={styles.bio}>{bio || "Insert bio here..."}</div>
+    </Box>
   );
 };
 

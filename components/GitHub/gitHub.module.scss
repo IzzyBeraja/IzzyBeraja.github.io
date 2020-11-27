@@ -6,3 +6,10 @@
   text-decoration: inherit;
   text-align: center;
 }
+
+.main {
+  margin: 0;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: auto auto;
+}
