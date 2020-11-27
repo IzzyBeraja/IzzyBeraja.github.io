@@ -12,8 +12,10 @@
 }
 
 .commit {
-  list-style: none;
-  padding: 0.5rem 1.5rem;
+  background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px 4px rgba(255, 105, 135, 0.3);
 }
 
 .message a {

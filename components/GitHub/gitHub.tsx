@@ -1,6 +1,6 @@
 import Profile from "components/Profile";
 import { GHCommit, GHProfile, cssStyles } from "types";
-import GitHubCommitList from "components/GitHubCommitList/gitHubCommitList";
+import GitHubCommitList from "components/CommitList/CommitList";
 
 type Props = {
   commitDisplayAmt?: number;

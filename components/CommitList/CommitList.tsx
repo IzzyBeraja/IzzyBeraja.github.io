@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core";
-import GitHubCommit from "components/GitHubCommit";
+import Commit from "components/Commit";
 import { GHCommit } from "types";
+import styles from "./CommitList.module.scss";
 
 type Props = {
   profileLink: string;
@@ -8,24 +8,17 @@ type Props = {
   commitDisplayAmt: number;
 };
 
-const useStyles = makeStyles({
-  commitList: {
-    display: "block",
-  },
-});
-
 const GitHubCommitList = ({
   profileLink,
   commits,
   commitDisplayAmt,
 }: Props) => {
-  const classes = useStyles();
   return (
-    <div className={classes.commitList}>
+    <div className={styles.commitList}>
       {commits &&
         commits
           .slice(0, commitDisplayAmt || commits.length)
-          .map(commit => <GitHubCommit key={commit.id} commitData={commit} />)}
+          .map(commit => <Commit key={commit.id} commitData={commit} />)}
       <div>
         <a href={profileLink}>See more of my GitHub here</a>
       </div>
