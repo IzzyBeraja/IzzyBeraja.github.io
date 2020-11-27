@@ -19,7 +19,7 @@ export type GHProfile = {
   bio: string;
 };
 
-export interface StyleArray {
+export interface cssStyles {
   [key: string]: CSS.Properties;
 }
 
