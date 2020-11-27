@@ -11,8 +11,6 @@ import getProfile from "services/githubProfileReader";
 
 import getCommits from "services/githubCommitReader";
 
-const totalCommits = 1;
-
 type Props = {
   gitHubProfile: GHProfile;
   gitHubCommits: GHCommit[];
@@ -28,11 +26,7 @@ const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
 
       <main>
         <Header />
-        <GitHub
-          profile={gitHubProfile}
-          commits={gitHubCommits}
-          commitDisplayAmt={totalCommits + 3}
-        />
+        <GitHub profile={gitHubProfile} commits={gitHubCommits} />
         <LinkedIn />
         <Projects />
         <Footer />
@@ -44,7 +38,7 @@ const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
 export const getStaticProps: GetStaticProps = async context => {
   const user = "IzzyBeraja";
   const gitHubProfile = await getProfile(user);
-  const gitHubCommits = await getCommits(user, totalCommits);
+  const gitHubCommits = await getCommits(user, 4);
   return {
     props: {
       gitHubProfile,
