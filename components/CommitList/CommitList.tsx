@@ -19,7 +19,7 @@ const GitHubCommitList = ({
         commits
           .slice(0, commitDisplayAmt || commits.length)
           .map(commit => <Commit key={commit.id} commitData={commit} />)}
-      <div>
+      <div className="text-center">
         <a href={profileLink}>See more of my GitHub here</a>
       </div>
     </div>

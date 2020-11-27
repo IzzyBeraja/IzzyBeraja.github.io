@@ -11,7 +11,7 @@ const GitHubCommit = ({
 }: Prop) => {
   const pushDate = new Date(pushedDate || "1/1/1900");
   return (
-    <Box>
+    <Box className={styles.bubble}>
       <ul className={styles.commit}>
         <li className={styles.message}>
           <a href={commitLink || "www.github.com"}>

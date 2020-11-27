@@ -7,8 +7,8 @@ import Head from "next/head";
 
 import { GetStaticProps } from "next";
 import { GHCommit, GHProfile } from "types";
-import getProfile from "services/githubProfileReader";
 
+import getProfile from "services/githubProfileReader";
 import getCommits from "services/githubCommitReader";
 
 type Props = {
