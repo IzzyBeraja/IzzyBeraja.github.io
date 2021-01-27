@@ -1,9 +1,10 @@
+import { reverse } from "dns";
 import { GHCommit } from "types";
 
 //> This code is a bit ugly
 //> Should look to clean this but it works for now
 
-interface Event {
+interface PushEvent {
   id: string;
   repo: {
     id: string;
@@ -33,24 +34,29 @@ const getCommits = async (
   );
 
   if (response && response.status === 200) {
-    const results: Event[] = await response.json();
-    const commitData: GHCommit[] = [];
-    results &&
-      results.forEach(gitEvent => {
-        gitEvent &&
-          // commits are output in reverse order
-          gitEvent.payload.commits.reverse().forEach(({ sha: id, message }) =>
-            commitData.push({
-              id,
-              commitLink: `https://www.github.com/${gitEvent.repo.name}/commit/${id}`,
-              message,
-              pushedDate: gitEvent.created_at,
-            })
-          );
-      });
-    return commitData.slice(0, totalEvents);
+    const results: PushEvent[] = await response.json();
+    const commitData = results
+      ?.map(gitEvent => {
+        // commits are output in reverse order
+        const data: GHCommit[] = gitEvent?.payload.commits?.map(
+          ({ sha: id, message }) => ({
+            id,
+            commitLink: `https://www.github.com/${gitEvent.repo.name}/commit/${id}`,
+            message,
+            pushedDate: gitEvent.created_at,
+          })
+        );
+        return data;
+      })
+      .flat();
+    return commitData?.reverse().slice(0, totalEvents);
   }
-  return `Server returned a ${response.status}: ${response.statusText}`;
+  console.log(`Server returned a ${response.status}: ${response.statusText}`);
+  return null;
+};
+
+const getCommitsFromEvent = (push: PushEvent) => {
+  return;
 };
 
 export default getCommits;

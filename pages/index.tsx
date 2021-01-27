@@ -18,7 +18,7 @@ type Props = {
 
 const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Home | IzzyBeraja.com</title>
         <link rel="icon" href="/favicon.ico" />
@@ -26,19 +26,23 @@ const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
 
       <main>
         <Header />
-        <GitHub profile={gitHubProfile} commits={gitHubCommits} />
+        {gitHubProfile && gitHubCommits && (
+          <GitHub profile={gitHubProfile} commits={gitHubCommits} />
+        )}
+
         <LinkedIn />
         <Projects />
         <Footer />
       </main>
-    </div>
+    </>
   );
 };
 
 export const getStaticProps: GetStaticProps = async context => {
   const user = "IzzyBeraja";
   const gitHubProfile = await getProfile(user);
-  const gitHubCommits = await getCommits(user, 4);
+  const gitHubCommits = await getCommits(user, 5);
+  console.log(gitHubProfile, gitHubCommits);
   return {
     props: {
       gitHubProfile,

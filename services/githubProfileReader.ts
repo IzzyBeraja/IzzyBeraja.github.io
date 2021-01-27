@@ -5,7 +5,7 @@ const getProfile = async (username: string): Promise<GHProfile | string> => {
 
   if (!response)
     return "An unexpected error has occured retrieving your profile.";
-  if (response.status === 404) return "This profile could not be found.";
+  if (response.status >= 400) return null;
 
   const { name, avatar_url, html_url, bio } = await response.json();
   const profileData: GHProfile = {

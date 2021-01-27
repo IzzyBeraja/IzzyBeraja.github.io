@@ -9,7 +9,7 @@ type Props = {
 const Profile = ({ profileData: { name, image, link, bio } }: Props) => {
   return (
     <Box className={styles.profile}>
-      <a href={link}>
+      <a className={styles.profileLink} href={link}>
         <img
           className={styles.profileImage}
           src={image}

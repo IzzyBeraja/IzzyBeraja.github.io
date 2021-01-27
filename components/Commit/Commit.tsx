@@ -1,4 +1,3 @@
-import { Box } from "@material-ui/core";
 import { GHCommit } from "types";
 import styles from "./Commit.module.scss";
 
@@ -11,18 +10,18 @@ const GitHubCommit = ({
 }: Prop) => {
   const pushDate = new Date(pushedDate || "1/1/1900");
   return (
-    <Box className={styles.bubble}>
-      <ul className={styles.commit}>
-        <li className={styles.message}>
-          <a href={commitLink || "www.github.com"}>
-            {message || "GitHub commit here"}
-          </a>
-        </li>
-        <li className={styles.pushDate}>
-          {`Pushed on ${pushDate.toLocaleDateString()} at ${pushDate.toLocaleTimeString()}`}
-        </li>
-      </ul>
-    </Box>
+    <div
+      className={`${styles.bubble} ${styles.borderGradient} ${styles.borderGradientPurple}`}
+    >
+      <div className={styles.commit}>
+        <a className={styles.message} href={commitLink || "www.github.com"}>
+          {message.split("\n")[0] || "GitHub commit here"}
+        </a>
+        <span
+          className={styles.pushDate}
+        >{`Pushed on ${pushDate.toLocaleDateString()} at ${pushDate.toLocaleTimeString()}`}</span>
+      </div>
+    </div>
   );
 };
 
