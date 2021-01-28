@@ -15,10 +15,9 @@ const GitHubCommitList = ({
 }: Props) => {
   return (
     <div className={styles.commitList}>
-      {commits &&
-        commits
-          .slice(0, commitDisplayAmt || commits.length)
-          .map(commit => <Commit key={commit.id} commitData={commit} />)}
+      {commits?.slice(0, commitDisplayAmt || commits.length).map(commit => {
+        return commit && <Commit key={commit.id} commitData={commit} />;
+      })}
       <div className="text-center">
         <a href={profileLink}>See more of my GitHub here</a>
       </div>

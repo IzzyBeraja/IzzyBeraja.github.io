@@ -39,15 +39,17 @@ const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async context => {
+  console.log("Fetching Data from Github...");
   const user = "IzzyBeraja";
   const gitHubProfile = await getProfile(user);
   const gitHubCommits = await getCommits(user, 5);
-  console.log(gitHubProfile, gitHubCommits);
+  //console.log(gitHubProfile, gitHubCommits);
   return {
     props: {
       gitHubProfile,
       gitHubCommits,
     },
+    revalidate: 60 * 5,
   };
 };
 

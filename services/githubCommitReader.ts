@@ -1,4 +1,3 @@
-import { reverse } from "dns";
 import { GHCommit } from "types";
 
 //> This code is a bit ugly
@@ -38,17 +37,15 @@ const getCommits = async (
     const commitData = results
       ?.map(gitEvent => {
         // commits are output in reverse order
-        const data: GHCommit[] = gitEvent?.payload.commits?.map(
-          ({ sha: id, message }) => ({
-            id,
-            commitLink: `https://www.github.com/${gitEvent.repo.name}/commit/${id}`,
-            message,
-            pushedDate: gitEvent.created_at,
-          })
-        );
-        return data;
+        return gitEvent?.payload.commits?.map(({ sha: id, message }) => ({
+          id,
+          commitLink: `https://www.github.com/${gitEvent.repo.name}/commit/${id}`,
+          message,
+          pushedDate: gitEvent.created_at,
+        }));
       })
-      .flat();
+      .flat()
+      .filter(val => val);
     return commitData?.reverse().slice(0, totalEvents);
   }
   console.log(`Server returned a ${response.status}: ${response.statusText}`);
