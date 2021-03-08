@@ -1,8 +1,9 @@
 import Head from "next/head";
+import Home from "../components/Title";
 
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Index.module.css";
 
-export default function Home() {
+const Index = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -10,17 +11,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <div className={styles.title}>
-          <h1>Although success seems straightforward in hindsight...</h1>
-          <h1>Life tends to take the winding path</h1>
-        </div>
-        <a className={styles.subTitle} href="#">
-          Take the winding path?
-        </a>
-
-        <p>Scroll Instead</p>
-      </main>
+      <Home />
+      {/* <Skills /> */}
+      {/* <Work /> */}
+      {/* <OpenSource /> */}
     </div>
   );
-}
+};
+
+export default Index;
