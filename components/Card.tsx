@@ -1,8 +1,8 @@
 import React from "react";
 
 interface Props {
-  className: string;
-  link: string;
+  className?: string;
+  link?: string;
   title: string;
   description: string;
 }
