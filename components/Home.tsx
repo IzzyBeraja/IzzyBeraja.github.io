@@ -5,17 +5,13 @@ const Home = () => {
     <div className="container">
       <main className={styles.main}>
         <div className={styles.title}>
-          <h1>Although success seems straightforward in hindsight...</h1>
-          <h1>Life tends to take the winding path</h1>
+          <h2>Maker</h2>
+          <h2>Creator</h2>
+          <h2>Designer</h2>
+          <h2>Developer</h2>
+          <h1 className={styles.name}>Izzy Beraja</h1>
         </div>
-        <a className={styles.subTitle} href="#">
-          Take the winding path?
-        </a>
       </main>
-      <footer className={styles.footer}>
-        <p>Scroll Instead</p>
-        <i className="fas fa-arrow-down"></i>
-      </footer>
     </div>
   );
 };
