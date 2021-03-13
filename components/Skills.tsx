@@ -4,7 +4,11 @@ import styles from "../styles/Skills.module.css";
 
 const Skills = () => {
   const skillInfo = [
-    { title: "C#", description: "First programming language" },
+    {
+      title: "C#",
+      description:
+        "My first programming language. I learned it in highschool and perfected it over the next few years.arstarstarstarst",
+    },
     { title: "JavaScript", description: "Front end programming" },
     { title: "TypeScript", description: "The JavaScript we deserve" },
   ];

@@ -1,10 +1,11 @@
 .grid {
   display: grid;
   grid-template-columns: auto auto auto;
-  gap: 4rem;
-  margin: 1rem;
+  gap: 5rem;
+  margin: 1rem 15rem;
 }
 
 .card {
+  min-width: 18vw;
   /* background-color: green; */
 }

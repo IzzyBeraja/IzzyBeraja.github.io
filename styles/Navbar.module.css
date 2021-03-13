@@ -20,6 +20,7 @@
   padding: 0.25rem;
   font-size: 1.1rem;
   border-bottom: 2px solid transparent;
+  transition: border-bottom 250ms;
 }
 
 .navbar_item:hover,
