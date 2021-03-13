@@ -1,13 +1,19 @@
 .navbar {
-  margin-top: 2rem;
+  /* position: sticky; */
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 0;
+  /* box-shadow: 0 -0.5rem 1rem black; */
 }
 
 .navbar_list {
   display: flex;
   justify-content: center;
   padding: 0;
-  gap: 4rem;
+  column-gap: 4rem;
   list-style: none;
+  margin: 0;
 }
 
 .navbar_item {
@@ -20,5 +26,6 @@
 .navbar_item:focus {
   outline: none;
   border-bottom: 2px solid black;
+  transition: border-bottom 500ms;
   cursor: pointer;
 }

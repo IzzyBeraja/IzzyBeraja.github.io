@@ -10,7 +10,7 @@ import styles from "../styles/Index.module.css";
 
 const Index = () => {
   return (
-    <>
+    <div id="Home">
       <NavBar />
       <main className={styles.container}>
         <Head>
@@ -23,7 +23,7 @@ const Index = () => {
         <Work />
         <OpenSource />
       </main>
-    </>
+    </div>
   );
 };
 

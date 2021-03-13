@@ -1,4 +1,4 @@
-import React from "react";
+import styles from "../styles/Card.module.css";
 
 interface Props {
   className?: string;
@@ -9,7 +9,7 @@ interface Props {
 
 const Card = ({ className, link, title, description }: Props) => {
   return (
-    <a href={link} className={className}>
+    <a href={link} className={[className, styles.card].join(" ")}>
       <h3>{title}</h3>
       <p>{description}</p>
     </a>

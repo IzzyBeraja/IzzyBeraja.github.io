@@ -10,7 +10,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="container">
+    <div id="Skills" className="container">
       <div>Skills</div>
       <div className={styles.grid}>
         {skillInfo.map(({ title, description }, i) => (
