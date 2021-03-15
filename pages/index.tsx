@@ -1,50 +1,30 @@
-import Header from "components/Header";
-import GitHub from "components/GitHub";
-import LinkedIn from "components/LinkedIn";
-import Projects from "components/Projects";
-import Footer from "components/Footer";
 import Head from "next/head";
 
-import { GetStaticProps } from "next";
-import { GHCommit, GHProfile } from "types";
+import NavBar from "../components/NavBar";
+import Home from "../components/Home";
+import Skills from "../components/Skills";
+import Work from "../components/Work";
+import OpenSource from "../components/OpenSource";
 
-import getProfile from "services/githubProfileReader";
-import getCommits from "services/githubCommitReader";
+import styles from "../styles/Index.module.css";
 
-type Props = {
-  gitHubProfile: GHProfile;
-  gitHubCommits: GHCommit[];
-};
-
-const Home = ({ gitHubProfile, gitHubCommits }: Props) => {
+const Index = () => {
   return (
-    <div>
-      <Head>
-        <title>Home | IzzyBeraja.com</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div id="Home">
+      <NavBar />
+      <main className={styles.container}>
+        <Head>
+          <title>Izzy Beraja</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <main>
-        <Header />
-        <GitHub profile={gitHubProfile} commits={gitHubCommits} />
-        <LinkedIn />
-        <Projects />
-        <Footer />
+        <Home />
+        <Skills />
+        <Work />
+        <OpenSource />
       </main>
     </div>
   );
 };
 
-export const getStaticProps: GetStaticProps = async context => {
-  const user = "IzzyBeraja";
-  const gitHubProfile = await getProfile(user);
-  const gitHubCommits = await getCommits(user, 4);
-  return {
-    props: {
-      gitHubProfile,
-      gitHubCommits,
-    },
-  };
-};
-
-export default Home;
+export default Index;

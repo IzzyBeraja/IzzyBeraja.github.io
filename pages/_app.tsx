@@ -1,10 +1,8 @@
-import type { AppProps } from "next/app";
-import "node_modules/bootstrap/dist/css/bootstrap.css";
-import "node_modules/@fortawesome/fontawesome-free/css/all.css";
-import "styles/globals.css";
+import "../styles/globals.css";
+import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 
-const _app = ({ Component, pageProps }: AppProps) => {
+function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
-};
+}
 
-export default _app;
+export default MyApp;
