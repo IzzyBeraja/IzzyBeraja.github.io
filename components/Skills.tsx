@@ -2,15 +2,39 @@ import Card from "../components/Card";
 
 import styles from "../styles/Skills.module.css";
 
+type SkillInfo = {
+  title: string;
+  description: string;
+};
+
 const Skills = () => {
-  const skillInfo = [
+  const skillInfo: SkillInfo[] = [
     {
       title: "C#",
       description:
-        "My first programming language. I learned it in highschool and perfected it over the next few years.arstarstarstarst",
+        "My first programming language. I learned it in highschool and perfected it over the next few years.",
     },
-    { title: "JavaScript", description: "Front end programming" },
-    { title: "TypeScript", description: "The JavaScript we deserve" },
+    {
+      title: "JS",
+      description: "Front end programming that I use on a daily basis",
+    },
+    {
+      title: "TS",
+      description: "The JavaScript we deserve",
+    },
+    {
+      title: "SQL",
+      description: "The JavaScript we deserve",
+    },
+    { title: "docker", description: "The JavaScript we deserve" },
+    {
+      title: "TS",
+      description: "The JavaScript we deserve",
+    },
+    {
+      title: "TS",
+      description: "The JavaScript we deserve",
+    },
   ];
 
   return (
@@ -18,12 +42,7 @@ const Skills = () => {
       <div>Skills</div>
       <div className={styles.grid}>
         {skillInfo.map(({ title, description }, i) => (
-          <Card
-            className={styles.card}
-            key={i}
-            title={title}
-            description={description}
-          />
+          <Card key={i} title={title} description={description} />
         ))}
       </div>
     </div>

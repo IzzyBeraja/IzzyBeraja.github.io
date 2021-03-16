@@ -2,17 +2,16 @@ import styles from "../styles/Card.module.css";
 
 interface Props {
   className?: string;
-  link?: string;
   title: string;
   description: string;
 }
 
-const Card = ({ className, link, title, description }: Props) => {
+const Card = ({ className, title, description }: Props) => {
   return (
-    <a href={link} className={[className, styles.card].join(" ")}>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </a>
+    <div className={[className, styles.card].join(" ")}>
+      <h3 className={[styles.background_text].join(" ")}>{title}</h3>
+      <p className={[styles.text].join(" ")}>{description}</p>
+    </div>
   );
 };
 
