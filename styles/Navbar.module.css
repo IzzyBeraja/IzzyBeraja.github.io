@@ -1,9 +1,14 @@
-.navbar {
-  /* position: sticky; */
+.header {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   padding: 1.5rem 0;
+  background-color: rgb(255, 255, 255, 0.9);
+  z-index: 1;
+}
+
+.navbar {
   /* box-shadow: 0 -0.5rem 1rem black; */
 }
 
@@ -17,10 +22,12 @@
 }
 
 .navbar_item {
-  padding: 0.25rem;
+  text-transform: capitalize;
+  padding: 0.25em;
   font-size: 1.1rem;
   border-bottom: 2px solid transparent;
   transition: border-bottom 250ms;
+  cursor: pointer;
 }
 
 .navbar_item:hover,
@@ -28,5 +35,13 @@
   outline: none;
   border-bottom: 2px solid black;
   transition: border-bottom 500ms;
+}
+
+.navbar_hamburger {
+  position: absolute;
+  height: 100%;
+  padding: 0 2em;
+  font-size: 1.5rem;
   cursor: pointer;
+  right: 0;
 }
