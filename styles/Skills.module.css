@@ -1,3 +1,16 @@
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  color: #3a3a3a;
+  padding-top: 2em;
+}
+
+.title span {
+  color: rgb(var(--color-highlight))
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
