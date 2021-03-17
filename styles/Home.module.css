@@ -5,18 +5,23 @@
   justify-content: center;
   padding-top: 4em;
   padding-left: 20%;
-  margin-bottom: 15em;
+  margin-bottom: 10em;
 }
 
-.main h2 {
+.desc {
+  margin-bottom: 8em;
+}
+
+.desc h2 {
   font-size: 3rem;
   margin-bottom: 0.5em;
+  color: #555;
 }
 
-.main h1 {
-  margin-top: 2em;
-  font-size: 4rem;
+.title h1 {
+  font-size: 4.5rem;
   font-weight: 700;
+  color: rgb(var(--color-highlight))
 }
 
 @media only screen and (max-width: 768px) {
