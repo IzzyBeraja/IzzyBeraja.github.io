@@ -26,20 +26,23 @@ const Skills = () => {
       title: "SQL",
       description: "The JavaScript we deserve",
     },
-    { title: "docker", description: "The JavaScript we deserve" },
+    { title: "Docker", description: "The JavaScript we deserve" },
     {
-      title: "TS",
+      title: "Mongo",
       description: "The JavaScript we deserve",
     },
     {
-      title: "TS",
+      title: "React",
+      description: "The JavaScript we deserve",
+    },
+    {
+      title: "NextJS",
       description: "The JavaScript we deserve",
     },
   ];
 
   return (
     <div id="Skills" className="container">
-      <div>Skills</div>
       <div className={styles.grid}>
         {skillInfo.map(({ title, description }, i) => (
           <Card key={i} title={title} description={description} />

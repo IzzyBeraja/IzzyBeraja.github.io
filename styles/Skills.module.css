@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   /* grid-template-columns: auto auto auto; */
   gap: 3em;
-  margin: 0 15em;
+  margin: 0em 15em;
 }
 
 .grid > * {

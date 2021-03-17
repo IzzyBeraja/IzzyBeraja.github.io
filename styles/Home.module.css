@@ -1,16 +1,44 @@
 .main {
-  padding-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  padding-top: 4em;
+  padding-left: 20%;
+  margin-bottom: 15em;
 }
 
 .main h2 {
-  margin-left: 25%;
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5em;
 }
 
 .main h1 {
-  margin-left: 25%;
-  margin-top: 5rem;
+  margin-top: 2em;
   font-size: 4rem;
   font-weight: 700;
 }
+
+@media only screen and (max-width: 768px) {
+  .main {
+    align-items: center;
+    padding-left: 0;
+
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .main {
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .main h2 {
+    font-size: 2rem;
+  }
+
+  .main h1 {
+    font-size: 3rem;
+  }
+}
+
