@@ -9,7 +9,7 @@
   border-width: .1em;
   border-radius: 0.25em;
   border-color: #eaeaea;
-  box-shadow: 0 0.25em 0.5em #808080;
+  box-shadow: 0 0.375em 0.75em var(--color-shadow);
   background-color: #ffffff;
   transition-property: transform, box-shadow;
   transition-duration: 250ms;
@@ -17,28 +17,33 @@
   user-select: none;
 }
 
-.svg_background {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
 
 .foreground_text {
   opacity: 1;
   position: absolute;
-  color: rgba(255, 94, 0, 0.5);
+  color: rgba(var(--color-highlight), 0.7);
   font-size: 4rem;
   text-transform: uppercase;
   transition-property: opacity;
   transition-duration: 300ms;
   /* transform: rotateZ(-45deg); */
+}
 
+.background_logo {
+  opacity: 0;
+  padding: 1em;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  position: absolute;
+  transition-property: opacity;
+  transition-duration: 300ms;
 }
 
 .background_text {
   opacity: 0;
   position: absolute;
-  color: rgba(255, 94, 0, 0.1);
+  color: rgba(var(--color-highlight), 0.15);
   font-size: 4rem;
   text-transform: uppercase;
   transition-property: opacity;
@@ -47,19 +52,27 @@
 
 .description {
   opacity: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
   transition-property: opacity;
   transition-duration: 300ms;
+  text-align: center;
+
 }
 
 .card:hover > .foreground_text {
   opacity: 0;
 }
 
-.card:hover > :not(.foreground_text) {
+.card:hover > :is(.background_text, .description) {
   opacity: 1;
+}
+
+.card:hover > .background_logo {
+  opacity: 0.15;
 }
 
 .card:hover {
   transform: translateY(-0.25rem);
-  box-shadow: 0 0.5em 1em rgba(255, 94, 0, 0.6);
+  box-shadow: 0 0.5em 1em rgba(var(--color-highlight), 0.6);
 }
