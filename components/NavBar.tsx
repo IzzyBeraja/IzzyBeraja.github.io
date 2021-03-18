@@ -31,7 +31,10 @@ const NavBar = () => {
             </a>
           </li>
           <li>
-            <a className={styles.navbar_item} href="#">
+            <a
+              className={styles.navbar_item}
+              href="https://drive.google.com/file/d/18y-X0aYSaXEwDpNo3EzViqz556QEkJrY/view?usp=sharing"
+            >
               Resume
             </a>
           </li>
