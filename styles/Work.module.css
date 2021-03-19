@@ -1,0 +1,36 @@
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  color: #3a3a3a;
+  padding-top: 2em;
+}
+
+.workCards {
+  display: flex;
+  gap: 4em 10em;
+  margin: 0 15em;
+  flex-wrap: wrap;
+}
+
+.workCards > * {
+  flex: 1.1 1 40%;
+  min-width: 20%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .title {
+    margin-bottom: 1em;
+  }
+
+  .workCards {
+    margin: 0 5em;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .workCards {
+    margin: 0 3em;
+  }
+}

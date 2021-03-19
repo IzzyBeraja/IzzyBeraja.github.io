@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  text-align: center;
+}
+
+.logo {
+  width: 15rem;
+  margin: 0 auto 1em auto;
+}
+
+.timeFrame {
+  margin-bottom: 1em;
+}
+
+.date {
+  display: inline-block;
+}
+
+.date > span {
+  color: rgb(var(--color-highlight));
+}
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    width: 10rem;
+  }
+}
