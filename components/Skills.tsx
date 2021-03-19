@@ -18,8 +18,14 @@ const Skills = () => {
         My <span>Skillset</span>
       </h1>
       <div className={styles.grid}>
-        {skillInfo.map(({ title, description, logo }, i) => (
-          <Card key={i} title={title} description={description} logo={logo} />
+        {skillInfo.map(({ title, description, logo, color }, i) => (
+          <Card
+            key={i}
+            title={title}
+            description={description}
+            logo={logo}
+            color={color}
+          />
         ))}
       </div>
     </div>

@@ -5,6 +5,7 @@ interface Props {
   title: string;
   description: string;
   logo?: string;
+  color?: string;
 }
 
 const cardBackground = (logo: string, title: string) => {
@@ -12,7 +13,7 @@ const cardBackground = (logo: string, title: string) => {
   return <img className={styles.background_logo} src={logo} alt={title} />;
 };
 
-const Card = ({ className, title, description, logo }: Props) => {
+const Card = ({ className, title, description, logo, color }: Props) => {
   return (
     <div className={[className, styles.card].join(" ")}>
       <h3 className={styles.foreground_text}>{title}</h3>
